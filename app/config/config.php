@@ -1,6 +1,7 @@
 <?php
-// public url
+// global url
 define("BASEURL", "http://localhost/BELAJAR-PHP-MVC-WPU/public");
+define("JS", "http://localhost/BELAJAR-PHP-MVC-WPU/public/js/");
 
 // DB
 define("DB_HOST", "localhost");

@@ -6,6 +6,9 @@
     </div>
 </section>
 
+<div class="container dark" style="width: 50%;">
+  <?= Flasher::flash() ;?>
+</div>
 
 <div class="container dark" style="width: 50%;">
         <!-- Button trigger modal -->
@@ -17,7 +20,10 @@
         <?php foreach($data["partner"] as $partner ) : ?>
         <li class="list-group-item d-flex justify-content-between align-items-start bg-dark text-light mt-1">
             <span><?= $partner["name"] ;?> | <b><?= $partner["devloper"] ;?></b></span>
-            <a href="<?= BASEURL ;?>/partner/detail/<?= $partner["id"] ;?>"><span class="badge bg-primary rounded-pill">Detail →</span></a>
+            <div>
+            <a href="<?= BASEURL ;?>/partner/detail/<?= $partner["id"] ;?>"><span class="badge bg-primary rounded-pill">detail</span></a>
+            <a onclick="deleteConfirm(event, '<?= BASEURL ;?>/partner/delete/<?= $partner['id'] ;?>')" href="#"><span class="badge bg-danger rounded-pill">delete</span></a>
+            </div>
         </li>
         <?php endforeach; ?>
     </ol>

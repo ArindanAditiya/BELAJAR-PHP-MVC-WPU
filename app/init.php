@@ -1,5 +1,5 @@
 <?php
-// init digunakan untuk memanggil class core
+// init digunakan untuk memanggil semua file yg dibutuhkan 
 
 // All Const
 require_once "config/config.php";
@@ -14,7 +14,7 @@ spl_autoload_register(function($class){
     require_once __DIR__ . "/core/$class.php";
 });
 
-// All Class in core WIth Autoloading
+// All Class in controllers WIth Autoloading
 spl_autoload_register(function($class){
     $class = explode("\\", $class);
     $class = end($class);

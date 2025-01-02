@@ -19,11 +19,29 @@ class Partner extends controller {
         $this->view("templates/footer");
     }
 
+    // Insert Partner
     public function insert(){
         if( $this->model("Partner_model")->insertNewPartner($_POST) > 0){
-            header("Location: BASEURL/partner");
+            Flasher::setFlash("berhasil", "ditambahkan", "success");
+            header("Location:" . BASEURL ."/partner"); 
+            exit;
         } else {
-            header("Location: BASEURL/partner");
+            Flasher::setFlash("gagal", "ditambahkan", "danger");
+            header("Location:" . BASEURL ."/partner"); 
+            exit;
+        }
+    }
+
+    // Delete Paertner
+    public function delete($id){
+        if( $this->model("Partner_model")->deletePartner($id) > 0){
+            Flasher::setFlash("berhasil", "dihapus", "success");
+            header("Location:" . BASEURL ."/partner");  
+            exit;
+        } else {
+            Flasher::setFlash("gagal", "dihapus", "danger");
+            header("Location:" . BASEURL ."/partner"); 
+            exit;
         }
     }
 }

@@ -48,6 +48,18 @@ class Partner_model {
         // Kembalikan jumlah baris yang terpengaruh
         return $this->db->rowCount();
     }
+
+    public function deletePartner($id){
+        // siapkan query
+        $query = "DELETE FROM partner WHERE `partner`.`id` = :id";
+
+        // binding and execude query
+        $this->db->query($query);
+        $this->db->bind("id", $id);
+        $this->db->execute();
+
+        return $this->db->rowCount();
+    }
     
     
 }

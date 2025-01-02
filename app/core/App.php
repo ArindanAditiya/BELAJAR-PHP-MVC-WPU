@@ -32,10 +32,10 @@ class App{
         // params
         if( !empty($url)){       
             if(isset($url[2])){ $this->params[0] = $url[2];} 
-            else{ $this->params[0] = "..."; } // <- curigak
+            else{ $this->params[0] = "<i>messege : params 1 kosong</i>"; } // <- pesan kala params 1 kosong
 
             if(isset($url[3])){ $this->params[1] = $url[3]; }
-            else{ $this->params[2] = "..."; }
+            else{ $this->params[2] = "<i>messege : params 2 kosong</i>"; } // <- pesan kala params 2 kosong   
         } 
 
         // jalankan controller & me*0thod, serta kirimlkan params jika ada
